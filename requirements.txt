@@ -3,4 +3,4 @@ pickle-mixin
 numpy
 sklearn
 gunicorn
-pandas
+pandas==1.4.1
