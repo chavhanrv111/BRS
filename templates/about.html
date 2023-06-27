@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Book Recommender System</title>
+</head>
+<style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    
+    .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+    /* Add a gray background color and some padding to the footer */
+    
+    footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+    }
+    
+    .input-group-prepend {
+        background-color: rgb(231, 135, 8);
+        padding: 7px;
+        width: 200px;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+                <a class="navbar-brand text-warning" style="color: coral;" href="/">Book Recommender System</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="/about">About</a></li>
+                    <li><a href="https://github.com/chavhanrv111/BRS">Source Code</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form action="/search_book" method="post" class="form-inline">
+                            <div class="input-group" style="display:flex; margin-top:10px;">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">@ Favorite Book </span>
+                                </div>
+                                <input type="text" class="form-control" required autocomplete="off" placeholder="Search" name="Book_Search" id="Book_Search" aria-label="Search" aria-describedby="basic-addon1">
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container text-center">
+        <h2 class="text-center">About Book Recommender System</h2><br>
+        <div class="row text-left">
+            <p>
+                A<b> Book Recommender System </b> is an application or software that utilizes algorithms and machine learning techniques to suggest books to users based on their preferences, interests, and previous reading behavior. The system analyzes
+                various data sources, such as user ratings, reviews, book attributes (e.g., genre, author, publication year), and sometimes even external data (e.g., bestseller lists), to generate personalized recommendations.</p>
+            <p> There are primarily two types of techniques used in Book Recommender Systems: </p>
+            <p>Collaborative Filtering: This approach recommends books based on the similarity of preferences among users. It identifies users who have similar reading tastes and recommends books that those similar users have enjoyed. Collaborative filtering
+                can be further divided into two types: User-based Collaborative Filtering: It finds users with similar preferences and recommends books that those users have liked. Item-based Collaborative Filtering: It identifies similar books based
+                on user ratings and recommends books that are similar to the ones a user has already enjoyed. </p>
+            <p>Content-Based Filtering: This approach recommends books based on the characteristics and attributes of the books themselves. It analyzes the content, genre, author, or other features of a book that a user has liked and suggests similar books
+                with comparable attributes. Content-based filtering is particularly useful when there is limited user data available or when users have unique preferences. Book Recommender Systems aim to assist users in discovering new books, expanding
+                their reading choices, and improving their overall reading experience. By providing personalized recommendations, these systems help users navigate the vast number of books available, saving time and effort in finding titles that align
+                with their interests. </p>
+        </div>
+
+    </div><br>
+
+    <footer class="container-fluid text-center">
+        <p>Book Recommender System</p>
+    </footer>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Book Recommender System</title>
+</head>
+<style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    
+    .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+    /* Add a gray background color and some padding to the footer */
+    
+    footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+    }
+    
+    .input-group-prepend {
+        background-color: rgb(231, 135, 8);
+        padding: 7px;
+        width: 200px;
+    }
+    
+    .col-sm-2 {
+        height: 30em;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+                <a class="navbar-brand text-warning" style="color: coral;" href="/">Book Recommender System</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="https://github.com/chavhanrv111/BRS">Source Code</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form action="/search_book" method="post" class="form-inline">
+                            <div class="input-group" style="display:flex; margin-top:10px;">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">@ Favorite Book </span>
+                                </div>
+                                <input type="text" class="form-control" required autocomplete="off" placeholder="Search" name="Book_Search" id="Book_Search" aria-label="Search" aria-describedby="basic-addon1">
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container text-center">
+        {%if search_result[0] != None %}
+        <h2 class="text-center"></h2><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="{{search_result[0][4]}}" class="img-responsive" style="width:120% ;height:400px;" alt="Image">
+            </div>
+            <div class="col-sm-8">
+                <h4>{{search_result[0][0]}}</h4>
+                <h5>{{search_result[0][1]}}</h5>
+                <h5>{{search_result[0][2]}}</h5>
+            </div>
+        </div>
+        {% endif %} {%if search_result[0] != None %}
+        <hr>
+        <h3 class="text-left">Similar Books You Like To Check</h3><br>
+        <div class="row">
+            {% for i in range (1,search_result|length) %}
+            <div class="col-sm-2">
+                <img src="{{search_result[i][3]}}" class="img-responsive" style="width:100% ;height:200px;" alt="Image">
+                <h4>{{search_result[i][0]}}</h4>
+                <h5>{{search_result[i][1]}}</h5>
+                <h5>{{search_result[i][2]}}</h5>
+            </div>
+            {% endfor %}
+
+        </div> {% endif %} {% if search_result[0] == None %}
+        <h2 class="text-center text-info">No Book Found!!! With Name {{search_result[1]}}</h2><br> {% endif %}
+    </div><br>
+
+    <footer class="container-fluid text-center">
+        <p>Book Recommender System</p>
+    </footer>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
