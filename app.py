@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request,url_for,redirect
 import pickle
 import numpy as np
+import pandas as pd
 
 popular_df = pd.read_pickle(open('popular.pkl','rb'))
 books = pd.read_pickle(open('books.pkl','rb'))
